@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBED TECH LIM - Web Development, PC Repair & Software Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-laptop-code"></i>
+                <span>OBED TECH LIM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="OBED TECH LIM">OBED TECH LIM</h1>
+                <p class="hero-subtitle">Professional Web Development, PC Repair & Windows Installation Services</p>
+                <p class="hero-description">Transforming ideas into digital reality. Fast, reliable, and affordable tech solutions in Kenya.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="150">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="200">0</span>
+                        <span class="stat-label">PC Repairs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-icons">
+                    <i class="fas fa-code"></i>
+                    <i class="fas fa-tools"></i>
+                    <i class="fab fa-windows"></i>
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive tech solutions tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Web Development -->
+                <div class="service-card" data-service="web-dev">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Responsive Website Design</li>
+                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                        <li><i class="fas fa-check"></i> Portfolio Websites</li>
+                        <li><i class="fas fa-check"></i> Web Applications</li>
+                        <li><i class="fas fa-check"></i> SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> Domain & Hosting Setup</li>
+                    </ul>
+                    <div class="service-price">From KES 5,000</div>
+                    <button class="btn btn-service" onclick="addToCart('web-dev', 'Web Development Package', 5000)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- PC Repair -->
+                <div class="service-card featured" data-service="pc-repair">
+                    <div class="service-badge">Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>PC Repair Services</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Hardware Diagnostics</li>
+                        <li><i class="fas fa-check"></i> Virus & Malware Removal</li>
+                        <li><i class="fas fa-check"></i> Data Recovery</li>
+                        <li><i class="fas fa-check"></i> RAM & Storage Upgrade</li>
+                        <li><i class="fas fa-check"></i> Screen Replacement</li>
+                        <li><i class="fas fa-check"></i> General Maintenance</li>
+                    </ul>
+                    <div class="service-price">From KES 1,500</div>
+                    <button class="btn btn-service" onclick="addToCart('pc-repair', 'PC Repair Service', 1500)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Windows Installation -->
+                <div class="service-card" data-service="windows">
+                    <div class="service-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3>Windows Installation</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Windows 10/11 Installation</li>
+                        <li><i class="fas fa-check"></i> Driver Installation</li>
+                        <li><i class="fas fa-check"></i> Software Setup</li>
+                        <li><i class="fas fa-check"></i> System Optimization</li>
+                        <li><i class="fas fa-check"></i> Backup & Restore</li>
+                        <li><i class="fas fa-check"></i> Dual Boot Setup</li>
+                    </ul>
+                    <div class="service-price">From KES 2,000</div>
+                    <button class="btn btn-service" onclick="addToCart('windows', 'Windows Installation', 2000)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Solutions -->
+                <div class="service-card" data-service="mobile">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Solutions</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Phone Software Updates</li>
+                        <li><i class="fas fa-check"></i> App Installation</li>
+                        <li><i class="fas fa-check"></i> Data Transfer</li>
+                        <li><i class="fas fa-check"></i> Phone Unlocking</li>
+                        <li><i class="fas fa-check"></i> Screen Replacement</li>
+                        <li><i class="fas fa-check"></i> Battery Replacement</li>
+                    </ul>
+                    <div class="service-price">From KES 1,000</div>
+                    <button class="btn btn-service" onclick="addToCart('mobile', 'Mobile Solutions', 1000)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Network Solutions -->
+                <div class="service-card" data-service="network">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Solutions</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> WiFi Setup & Configuration</li>
+                        <li><i class="fas fa-check"></i> Network Troubleshooting</li>
+                        <li><i class="fas fa-check"></i> Router Configuration</li>
+                        <li><i class="fas fa-check"></i> LAN Setup</li>
+                        <li><i class="fas fa-check"></i> Network Security</li>
+                        <li><i class="fas fa-check"></i> CCTV Installation</li>
+                    </ul>
+                    <div class="service-price">From KES 3,000</div>
+                    <button class="btn btn-service" onclick="addToCart('network', 'Network Solutions', 3000)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Consultation -->
+                <div class="service-card" data-service="consult">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Tech Consultation</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> IT Strategy Planning</li>
+                        <li><i class="fas fa-check"></i> System Recommendations</li>
+                        <li><i class="fas fa-check"></i> Software Selection</li>
+                        <li><i class="fas fa-check"></i> Security Audit</li>
+                        <li><i class="fas fa-check"></i> Training & Support</li>
+                        <li><i class="fas fa-check"></i> Remote Assistance</li>
+                    </ul>
+                    <div class="service-price">From KES 1,000/hr</div>
+                    <button class="btn btn-service" onclick="addToCart('consult', 'Tech Consultation', 1000)">
+                        <i class="fas fa-cart-plus"></i> Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Showcasing our best development work</p>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Websites</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="app">Applications</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Project Screenshot</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> View Live</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Corporate Website</h3>
+                        <p>Modern responsive website for a Nairobi-based company</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ecommerce">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>E-commerce Platform</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> View Live</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Online Store</h3>
+                        <p>Full-featured e-commerce with M-Pesa payments</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>M-Pesa API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile"></i>
+                            <span>Web Application</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="btn btn-view"><i class="fas fa-eye"></i> View Live</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Inventory System</h3>
+                        <p>Custom inventory management solution</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Packages</h2>
+                <p>Choose the perfect plan for your needs</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">KES 5,000</div>
+                    <ul>
+                        <li>5-Page Website</li>
+                        <li>Mobile Responsive</li>
+                        <li>Basic SEO</li>
+                        <li>1 Month Support</li>
+                        <li>Contact Form</li>
+                    </ul>
+                    <button class="btn btn-pricing" onclick="addToCart('starter', 'Starter Package', 5000)">Select Plan</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Best Value</div>
+                    <h3>Business</h3>
+                    <div class="price">KES 15,000</div>
+                    <ul>
+                        <li>10-Page Website</li>
+                        <li>E-commerce Ready</li>
+                        <li>Advanced SEO</li>
+                        <li>3 Months Support</li>
+                        <li>Social Media Integration</li>
+                        <li>Admin Dashboard</li>
+                    </ul>
+                    <button class="btn btn-pricing" onclick="addToCart('business', 'Business Package', 15000)">Select Plan</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">KES 35,000</div>
+                    <ul>
+                        <li>Unlimited Pages</li>
+                        <li>Custom Web App</li>
+                        <li>Payment Integration</li>
+                        <li>6 Months Support</li>
+                        <li>Training Included</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <button class="btn btn-pricing" onclick="addToCart('premium', 'Premium Package', 35000)">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your project? Contact us today</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+254 7XX XXX XXX</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@obedtech.co.ke</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Nairobi, Kenya</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 8AM - 6PM</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" required placeholder="Phone Number (2547XXXXXXXX)">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option value="web">Web Development</option>
+                            <option value="repair">PC Repair</option>
+                            <option value="windows">Windows Installation</option>
+                            <option value="mobile">Mobile Solutions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Describe your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">KES 0</span>
+            </div>
+            <button class="btn btn-checkout" onclick="openPaymentModal()">
+                <i class="fas fa-credit-card"></i> Proceed to Payment
+            </button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-lock"></i> Secure Payment</h2>
+                <button class="close-modal" onclick="closePaymentModal()"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method active" data-method="mpesa">
+                    <img src="https://www.safaricom.co.ke/images/mpesa-logo.png" alt="M-Pesa" class="mpesa-logo">
+                    <span>M-Pesa</span>
+                </div>
+                <div class="payment-method" data-method="card">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Card</span>
+                </div>
+                <div class="payment-method" data-method="bank">
+                    <i class="fas fa-university"></i>
+                    <span>Bank</span>
+                </div>
+            </div>
+
+            <!-- M-Pesa Payment Form -->
+            <div class="payment-form active" id="mpesaForm">
+                <div class="form-group">
+                    <label>M-Pesa Phone Number</label>
+                    <input type="tel" id="mpesaPhone" placeholder="2547XXXXXXXX" maxlength="12">
+                    <small>Enter number in format: 2547XXXXXXXX</small>
+                </div>
+                <div class="amount-display">
+                    <span>Amount to Pay:</span>
+                    <strong id="paymentAmount">KES 0</strong>
+                </div>
+                <button class="btn btn-pay" onclick="initiateSTKPush()">
+                    <i class="fas fa-mobile-alt"></i> Pay with M-Pesa
+                </button>
+                <div class="mpesa-instructions">
+                    <p><i class="fas fa-info-circle"></i> You will receive an STK push on your phone. Enter your M-Pesa PIN to complete payment.</p>
+                </div>
+            </div>
+
+            <!-- Card Payment Form (Paystack/Flutterwave integration ready) -->
+            <div class="payment-form" id="cardForm">
+                <div class="coming-soon">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Card payment coming soon via Paystack</p>
+                </div>
+            </div>
+
+            <!-- Bank Transfer Form -->
+            <div class="payment-form" id="bankForm">
+                <div class="bank-details">
+                    <h4>Bank Transfer Details</h4>
+                    <div class="detail-row">
+                        <span>Bank:</span>
+                        <strong>KCB Bank</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Account Name:</span>
+                        <strong>OBED TECH LIM</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Account Number:</span>
+                        <strong>1234567890</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Branch:</span>
+                        <strong>Nairobi CBD</strong>
+                    </div>
+                    <p class="bank-note">Please use your phone number as reference. Upload receipt after payment.</p>
+                </div>
+            </div>
+
+            <div class="payment-footer">
+                <div class="secure-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>256-bit SSL Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Status Modal -->
+    <div class="modal" id="statusModal">
+        <div class="modal-content status-content">
+            <div class="status-icon" id="statusIcon">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <h3 id="statusTitle">Processing Payment...</h3>
+            <p id="statusMessage">Please check your phone and enter M-Pesa PIN</p>
+            <button class="btn btn-close-status" onclick="closeStatusModal()" style="display:none;" id="closeStatusBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0a0e27" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>OBED TECH LIM</span>
+                    </div>
+                    <p>Your trusted partner for web development, PC repair, and tech solutions in Kenya. Quality service, affordable prices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">PC Repair</a></li>
+                        <li><a href="#">Windows Installation</a></li>
+                        <li><a href="#">Network Solutions</a></li>
+                        <li><a href="#">Tech Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> +254 7XX XXX XXX</li>
+                        <li><i class="fas fa-envelope"></i> info@obedtech.co.ke</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="payment-partners">
+                    <span>We Accept:</span>
+                    <div class="partner-logos">
+                        <img src="https://www.safaricom.co.ke/images/mpesa-logo.png" alt="M-Pesa" class="partner-logo">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 OBED TECH LIM. All Rights Reserved.</p>
+                    <p class="powered-by">Powered by <span>OBED TECH</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeAllModals()"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
