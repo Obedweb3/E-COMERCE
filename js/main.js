@@ -66,6 +66,9 @@ function initScrollAnimations() {
 }
 
 // Counter Animation
+/**
+ * Initializes counters by observing their intersection with the viewport.
+ */
 function initCounters() {
     const counters = document.querySelectorAll('.stat-number');
     
@@ -86,6 +89,9 @@ function initCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
+/**
+ * Animates a counter on the specified element to reach the target value.
+ */
 function animateCounter(element, target) {
     let current = 0;
     const increment = target / 50;
@@ -101,6 +107,9 @@ function animateCounter(element, target) {
 }
 
 // Project Filter
+/**
+ * Initializes the project filter functionality for filtering project cards.
+ */
 function initProjectFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.project-card');
@@ -132,6 +141,9 @@ function initProjectFilter() {
 }
 
 // Cart Functions
+/**
+ * Adds an item to the cart if it is not already present.
+ */
 function addToCart(id, name, price) {
     const existingItem = cart.find(item => item.id === id);
     
@@ -147,12 +159,18 @@ function addToCart(id, name, price) {
     saveCartToStorage();
 }
 
+/**
+ * Removes an item from the cart by its ID.
+ */
 function removeFromCart(id) {
     cart = cart.filter(item => item.id !== id);
     updateCart();
     saveCartToStorage();
 }
 
+/**
+ * Updates the shopping cart display with items, total count, and total price.
+ */
 function updateCart() {
     const cartItems = document.getElementById('cartItems');
     const cartCount = document.querySelector('.cart-count');
@@ -188,6 +206,9 @@ function updateCart() {
     cartTotal.textContent = 'KES ' + currentTotal.toLocaleString();
 }
 
+/**
+ * Toggles the visibility of the cart sidebar and overlay.
+ */
 function toggleCart() {
     const cartSidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('overlay');
@@ -196,6 +217,9 @@ function toggleCart() {
 }
 
 // Payment Methods
+/**
+ * Initializes payment method selection and corresponding forms.
+ */
 function initPaymentMethods() {
     const methods = document.querySelectorAll('.payment-method');
     const forms = document.querySelectorAll('.payment-form');
@@ -213,6 +237,9 @@ function initPaymentMethods() {
     });
 }
 
+/**
+ * Opens the payment modal if the cart is not empty.
+ */
 function openPaymentModal() {
     if (cart.length === 0) {
         showNotification('Your cart is empty!', 'error');
@@ -225,16 +252,25 @@ function openPaymentModal() {
     toggleCart();
 }
 
+/**
+ * Closes the payment modal and overlay.
+ */
 function closePaymentModal() {
     document.getElementById('paymentModal').classList.remove('active');
     document.getElementById('overlay').classList.remove('active');
 }
 
+/**
+ * Closes the status modal and overlay by removing the 'active' class.
+ */
 function closeStatusModal() {
     document.getElementById('statusModal').classList.remove('active');
     document.getElementById('overlay').classList.remove('active');
 }
 
+/**
+ * Closes all active modals and removes active classes from elements.
+ */
 function closeAllModals() {
     closePaymentModal();
     closeStatusModal();
@@ -295,6 +331,15 @@ async function initiateSTKPush() {
     }
 }
 
+/**
+ * Poll the payment status for a given checkout request ID.
+ *
+ * This function initiates a polling mechanism that checks the payment status every 10 seconds, up to a maximum of 30 attempts.
+ * If the payment is successful, it displays a success message and clears the cart. If the payment fails or times out,
+ * it shows an appropriate error message. Errors during the fetch operation are logged to the console.
+ *
+ * @param checkoutRequestID - The unique identifier for the checkout request to poll.
+ */
 function pollPaymentStatus(checkoutRequestID) {
     let attempts = 0;
     const maxAttempts = 30; // 5 minutes (10 seconds interval)
@@ -330,6 +375,17 @@ function pollPaymentStatus(checkoutRequestID) {
     }, 10000); // Poll every 10 seconds
 }
 
+/**
+ * Displays a status modal with a specific type, title, and message.
+ *
+ * This function retrieves the modal and its elements from the DOM, sets the appropriate icon and class based on the provided type,
+ * and updates the title and message content. It also controls the visibility of the close button depending on the type of status
+ * being displayed. Finally, it activates the modal and overlay for user interaction.
+ *
+ * @param {string} type - The type of status to display (e.g., 'processing', 'success', 'error').
+ * @param {string} title - The title to be displayed in the modal.
+ * @param {string} message - The message to be displayed in the modal.
+ */
 function showStatusModal(type, title, message) {
     const modal = document.getElementById('statusModal');
     const icon = document.getElementById('statusIcon');
@@ -369,6 +425,17 @@ function showStatusModal(type, title, message) {
 }
 
 // Utility Functions
+/**
+ * Displays a notification on the screen.
+ *
+ * This function creates a notification element with a specified message and type,
+ * applying appropriate styles and icons based on the notification type.
+ * The notification is displayed for 3 seconds before it fades out and is removed
+ * from the DOM. The default notification type is 'info'.
+ *
+ * @param {string} message - The message to be displayed in the notification.
+ * @param {string} [type='info'] - The type of notification, which determines its style and icon.
+ */
 function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
@@ -415,6 +482,9 @@ function saveCartToStorage() {
     localStorage.setItem('obedtech_cart', JSON.stringify(cart));
 }
 
+/**
+ * Loads the shopping cart from local storage and updates it if found.
+ */
 function loadCartFromStorage() {
     const saved = localStorage.getItem('obedtech_cart');
     if (saved) {
